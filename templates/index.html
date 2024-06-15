@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Palavras em Páginas Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Buscador de Palavras em Páginas Web</h1>
+        <form id="formBusca" onsubmit="return false;">
+            <label for="txtUrls">Insira as URLs (uma por linha):</label>
+            <textarea id="txtUrls" name="urls" rows="5" cols="50" required></textarea>
+
+            <label for="txtPalavraChave">Palavra-chave para buscar:</label>
+            <input type="text" id="txtPalavraChave" name="palavra-chave" required>
+
+            <button type="button" onclick="processarUrls()">Processar URLs</button>
+        </form>
+
+        <div id="resultados" class="resultados">
+            <h2>Resultados da Busca:</h2>
+            <div id="divResultados"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
